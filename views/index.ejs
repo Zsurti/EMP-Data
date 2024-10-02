@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Tech Solutions</title>
+  <link rel="stylesheet" type="text/css" href="/styles/main.css">
+</head>
+
+<body>
+  <h1>TECH SOLUTIONS</h1>
+
+  <form action="/employee" method="POST" class="buttons">
+    <button type="submit" value="Alice" name="select">1</button>
+    <button type="submit" value="Bob" name="select">2</button>
+    <button type="submit" value="Zsurti" name="select">3</button>
+  </form>
+
+  <div id="empContainer" class="hidden">
+    <% if (locals.employee) { %>
+
+      <h2>
+        <%= employee.name %>
+      </h2>
+
+      <h3>Records:</h3>
+      <ul id="ingredientsList">
+        <li>Age: <%= employee.age %></li>
+        <li>Department: <%= employee.department %></li>
+        <li>Skills: <%= employee.skills.join(', ') %></li>
+        <li>Full Time: <%= employee.isFullTime %></li>
+      </ul>
+
+    <% } else { %>
+      <h2>Select an employee here</h2>
+    <% } %>
+  </div>
+</body>
+
+</html>
